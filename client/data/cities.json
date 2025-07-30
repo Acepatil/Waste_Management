@@ -1,0 +1,64 @@
+{
+  "cities": [
+    {
+      "id": "eeaf",
+      "cityName": "El Cuervo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-14T11:59:16.457Z",
+      "notes": "",
+      "position": {
+        "lat": "40.15348207031954",
+        "lng": "-1.351117093702372"
+      }
+    },
+    {
+      "id": "a4c6",
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-14T11:59:22.316Z",
+      "notes": "lm;;,'",
+      "position": {
+        "lat": "19.092997616308246",
+        "lng": "73.25993986312909"
+      }
+    },
+    {
+      "id": "27ce",
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-14T12:00:03.945Z",
+      "notes": "l m;lm;l",
+      "position": {
+        "lat": "19.265612360231202",
+        "lng": "73.0648105597148"
+      }
+    },
+    {
+      "id": "4c82",
+      "cityName": "Pen",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-19T10:32:43.328Z",
+      "notes": "",
+      "position": {
+        "lat": "18.73730522976468",
+        "lng": "73.21803295262254"
+      }
+    },
+    {
+      "id": "da55",
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-19T10:33:35.708Z",
+      "notes": "",
+      "position": {
+        "lat": "18.745108099985455",
+        "lng": "72.97511470511068"
+      }
+    }
+  ]
+}

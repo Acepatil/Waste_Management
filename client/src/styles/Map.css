@@ -1,0 +1,31 @@
+/* styles/Map.css */
+
+.map-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .map-button {
+    position: absolute;
+    z-index: 1000;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    margin-left: 2rem;
+    font-family: "Space Mono", monospace;
+    color: #fff;
+    background-color: #333333;
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  .map-button:hover {
+    background-color: #555555;
+  }
+  

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="2000" height="1500" viewBox="0 0 2000 1500">
+  <!-- Removed the rect element that filled the background with white -->
+  <g transform="matrix(0.75,0,0,0.75,249.2500000000001,-0.749507752947693)">
+    <svg viewBox="0 0 280 280" data-background-color="#925626" preserveAspectRatio="xMidYMid meet" height="2000" width="2000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="tight-bounds" transform="matrix(1,0,0,1,0.13999999999998636,0.13990811388356406)">
+        <svg viewBox="0 0 279.72 279.72" height="279.72" width="279.72">
+          <g>
+            <svg viewBox="0 0 279.72 279.72" height="279.72" width="279.72">
+              <g>
+                <svg viewBox="0 0 279.72 279.72" height="279.72" width="279.72">
+                  <g id="textblocktransform">
+                    <svg viewBox="0 0 279.72 279.72" height="279.72" width="279.72" id="textblock">
+                      <g>
+                        <svg viewBox="0 0 279.72 279.72" height="279.72" width="279.72">
+                          <g transform="matrix(1,0,0,1,57.446704652707865,57.446704652707865)">
+                            <svg viewBox="0 0 164.8265906945843 164.8265906945843" height="164.8265906945843" width="164.8265906945843">
+                              <g id="icon-0">
+                                <circle r="82" cx="82.41329534729215" cy="82.41329534729215" fill="#000000" data-fill-palette-color="accent"></circle>
+                                <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="7.8 22.93 84.37246973388402 54.150305074513334" x="24.72398860418764" y="24.723988604187646" height="115.378613486209" width="115.378613486209" class="icon-jxe-0" data-fill-palette-color="quaternary" id="jxe-0">
+                                  <path d="M31.61 32.89H13.06A1.5 1.5 0 0 0 13.06 35.89H31.61A1.5 1.5 0 0 0 31.61 32.89" fill="#000000" data-fill-palette-color="quaternary"></path>
+                                  <path d="M87.27 74.07H85.56A6.75 6.75 0 0 0 83.56 70.59C75.56 40.24 51.13 34.53 47.56 33.86V24.43A1.5 1.5 0 0 0 46.06 22.93H37.8A1.5 1.5 0 0 0 36.3 24.43V26.71H9.3A1.5 1.5 0 0 0 7.8 28.21V57.07A1.5 1.5 0 0 0 9.3 58.57H36.3V60.83A1.5 1.5 0 0 0 37.8 62.33H46.08A1.5 1.5 0 0 0 47.58 60.83V59.83A24.14 24.14 0 0 1 56 71.65 6.65 6.65 0 0 0 54.91 74.07H29.55A1.5 1.5 0 0 0 29.55 77.07H56.24A1.5 1.5 0 0 0 57.74 75.57 3.79 3.79 0 0 1 61.51 71.8 3.77 3.77 0 0 1 65.28 75.57 1.5 1.5 0 0 0 68.28 75.57 6.8 6.8 0 0 0 67.28 72.07 4 4 0 0 1 67.98 71.86 3 3 0 0 1 68.64 71.8 3.77 3.77 0 0 1 72.26 74.58 6.4 6.4 0 0 0 72.17 75.58 1.5 1.5 0 0 0 73.67 77.08H73.9A1.5 1.5 0 0 0 75.4 75.58 7 7 0 0 0 75.32 74.58 3.76 3.76 0 0 1 82.71 75.58 1.5 1.5 0 0 0 84.21 77.08H87.21A1.5 1.5 0 1 0 87.27 74.07M10.82 55.57V29.71H36.3V55.57zM39.3 59.33V25.93H44.58V56.88A1.5 1.5 0 0 0 44.58 57.28V59.28H39.3ZM73.8 71.2A6.77 6.77 0 0 0 68.8 68.82 26.73 26.73 0 0 0 56.3 52.39 1.5 1.5 0 0 0 54.93 55.06 24.18 24.18 0 0 1 65.93 69.41 7 7 0 0 0 65.15 69.83 6.74 6.74 0 0 0 58.51 69.54 27.06 27.06 0 0 0 47.58 56.23V36.91C52 37.8 72 43.2 79.93 68.88A7 7 0 0 0 78.93 68.8 6.78 6.78 0 0 0 73.8 71.2" fill="#000000" data-fill-palette-color="quaternary"></path>
+                                  <path d="M91.61 62.54A1.5 1.5 0 0 0 89.5 62.78L85.32 68.05A1.5 1.5 0 1 0 87.67 69.91L91.85 64.64A1.5 1.5 0 0 0 91.61 62.54" fill="#000000" data-fill-palette-color="quaternary"></path>
+                                  <path d="M71.89 55.56A1.5 1.5 0 0 0 70.39 57.06V64.51A1.5 1.5 0 0 0 73.39 64.51V57.06A1.5 1.5 0 0 0 71.89 55.56" fill="#000000" data-fill-palette-color="quaternary"></path>
+                                  <path d="M52.46 72.59A1.5 1.5 0 0 0 54.11 70.09L48 66A1.5 1.5 0 1 0 46.35 68.5Z" fill="#000000" data-fill-palette-color="quaternary"></path>
+                                </svg>
+                              </g>
+                            </svg>
+                          </g>
+                          <g id="text-0">
+                            <path d="M32.738 104.545l-1
