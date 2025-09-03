@@ -1,11 +1,28 @@
 from api import app,db,bcrypt
 from flask import jsonify,request,send_file
-from api.models import User,Complaint,OTP,Admin,AdminPending
+from api.model import User,Complaint,OTP,Admin,AdminPending
 from api.otp_generation import send_mail
 from io import BytesIO
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from datetime import timedelta
 import random
+import tensorflow as tf
+from tensorflow.keras.applications.resnet50 import preprocess_input
+import numpy as np
+from PIL import Image
+
+MODEL_PATH = "./api/ML_model/trashnet_resnet50_seq.h5"
+
+model = tf.keras.models.load_model(
+    MODEL_PATH,
+    custom_objects={"preprocess_input": preprocess_input}
+)
+
+IMG_SIZE = (224, 224)
+
+# Define class names (order must match training dataset)
+CLASS_NAMES = ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+
 
 def create_otp():
     ans=random.randint(10000,99999)
@@ -195,7 +212,9 @@ def get_all_images():
             "description": complaint.description,
             "username": complaint.username,
             "status": complaint.status,
-            "photo_url":None
+            "photo_url":None,
+            "predicted_class": complaint.predicted_class,
+            "confidence": complaint.confidence
         }
 
         # Use URL for the image
@@ -254,7 +273,9 @@ def get_all_images_pen():
             "task_id": complaint.task_id,
             "description": complaint.description,
             "username": complaint.username,
-            "status": complaint.status
+            "status": complaint.status,
+            "predicted_class": complaint.predicted_class,
+            "confidence": complaint.confidence
         }
 
         # Use URL for the image
@@ -284,7 +305,9 @@ def get_all_images_comp():
             "task_id": complaint.task_id,
             "description": complaint.description,
             "username": complaint.username,
-            "status": complaint.status
+            "status": complaint.status,
+            "predicted_class": complaint.predicted_class,
+            "confidence": complaint.confidence
         }
 
         # Use URL for the image
@@ -304,9 +327,10 @@ def upload():
     description = request.form.get('description')
     lat = request.form.get('lat')
     lng = request.form.get('lng')
-    username=request.form.get('username')
-    status=request.form.get('status')
+    username = request.form.get('username')
+    status = request.form.get('status')
 
+    # Validation checks
     if not file:
         return jsonify({'error': 'No selected file'}), 400
     if not description:
@@ -315,7 +339,22 @@ def upload():
         return jsonify({'error': 'No defined location from your device'}), 400
     if not username:
         return jsonify({'error': 'No username. Log in first'}), 400
-    
+
+    # Convert file to image for prediction
+    img = Image.open(BytesIO(file.read())).convert("RGB")
+    img = img.resize(IMG_SIZE)
+    img_array = np.array(img) / 255.0
+    img_array = np.expand_dims(img_array, axis=0)
+
+    # Predict
+    preds = model.predict(img_array)
+    predicted = CLASS_NAMES[np.argmax(preds)]
+    confidence = float(np.max(preds))   # ✅ standardized
+
+    # Reset file pointer before saving to DB
+    file.stream.seek(0)
+
+    # Store complaint in DB
     user = User.query.filter_by(username=username).first()
     if not user:
         return jsonify({'error': 'User not found'}), 404
@@ -327,10 +366,16 @@ def upload():
         lat=lat,
         lng=lng,
         username=username,
-        status=status
+        status=status,
+        predicted_class=predicted,
+        confidence=confidence   # ✅ standardized
     )
-    
+
     db.session.add(new_complaint)
     db.session.commit()
 
-    return jsonify({'message': 'File successfully uploaded'}), 200
+    return jsonify({
+        'message': 'File successfully uploaded',
+        'predicted_class': predicted,
+        'confidence': confidence   # ✅ standardized
+    }), 200

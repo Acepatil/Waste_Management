@@ -43,6 +43,8 @@ class Complaint(db.Model):
     image_file = db.Column(db.LargeBinary, nullable=False)
     username = db.Column(db.String(20), db.ForeignKey('user.username'), nullable=False)
     status=db.Column(db.String(20),nullable=False)
+    predicted_class = db.Column(db.String(50))
+    confidence = db.Column(db.Float)
 
     def __repr__(self) -> str:
         return f"{self.image_name}->{self.username}"
