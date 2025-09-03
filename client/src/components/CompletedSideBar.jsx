@@ -90,6 +90,7 @@ const CompletedSideBar = () => {
                         <li key={location.task_id} onClick={() => handleLocationClick(location.lat, location.lng)}>
                             <img src={location.photo_url || 'default-image.png'} alt="Location" />
                             <p>{truncateDescription(location.description, 10)}</p>
+                            <p>Type: {location.predicted_class}</p>
                             {(isLogged && !isUser) ?
                             (<button className='buttonu' onClick={()=>handleClick(location.task_id)}>
                                 Shift</button>):<img src="/checkmark.png" alt="Done" />}

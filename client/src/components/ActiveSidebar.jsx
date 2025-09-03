@@ -65,6 +65,7 @@ const ActiveSideBar = () => {
                         <li key={location.task_id} onClick={() => handleLocationClick(location.lat, location.lng)}>
                             <img src={location.photo_url} alt="Location" />
                             <p>{truncateDescription(location.description, 10)}</p>
+                            <p>Type: {location.predicted_class}</p>
                             {location.status==="pending"?<img src="delete.png" alt='Pending'/>:<img src="checkmark.png" alt="Done" />}
                         </li>
                     ))}

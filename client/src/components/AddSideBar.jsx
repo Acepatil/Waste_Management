@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { useTask } from "../context/TaskContext"; // Adjust the import path as needed
+import { useTask } from "../context/TaskContext";
+import { useUser } from "../context/UserContext"; // Adjust the import path as needed
 import "../styles/SideBar.css";
 import { useNavigate } from "react-router";
 import { backURL } from "../config";
 import Loader from "../utils/Loader";
 
-const AddSideBar = ({username}) => {
+const AddSideBar = () => {
   const { yourCenter, dispatch } = useTask();
   const [loading,setLoading]=useState(false)
   const [newLocation, setNewLocation] = useState({
@@ -16,8 +17,8 @@ const AddSideBar = ({username}) => {
     description: "",
     photo: null,
     status: "",
-    username:username
   });
+  const {username}=useUser();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -70,7 +71,7 @@ const AddSideBar = ({username}) => {
     formData.append("description", newLocation.description);
     formData.append("file", newLocation.photo);
     formData.append("status", newLocation.status);
-    formData.append("username", "Ace");
+    formData.append("username", username);
     
     try {
       const res = await fetch(`${backURL}/add_complaint`, {
@@ -82,7 +83,7 @@ const AddSideBar = ({username}) => {
         const errorMessage = await res.text();
         throw new Error(`Failed to Fetch: ${errorMessage}`);
       }
-  
+      
       dispatch({ type: "waste/add", payload: newLocation });
       setNewLocation({
         lat: yourCenter[0],

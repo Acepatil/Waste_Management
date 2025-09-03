@@ -91,6 +91,7 @@ const PendingSideBar = () => {
                         <li key={location.task_id} onClick={() => handleLocationClick(location.lat, location.lng)}>
                             <img src={location.photo_url || 'default-image.png'} alt="Location" />
                             <p>{truncateDescription(location.description, 10)}</p>
+                            <p>Type: {location.predicted_class}</p>
                             {(isLogged && !isUser) ?
                             (<button onClick={()=>handleClick(location.task_id)}className='buttonu'>
                                 Shift</button>):<img src="/delete.png" alt="Pending" />}
